@@ -1,0 +1,52 @@
+#include <iostream>
+#include <string>
+#include <vector>
+
+using namespace std;
+
+// functions
+    // if line fails ask for new input
+bool error();
+
+vector<string> students = {
+    "Ilyas Devaux", "Damon Diulio", "Hamir Griffith", "Anthony Landritsi", "Bode Lentz", "George Louglos", "Jordan Mckenzie", "Envy Brown",
+    "Christopher Richter", "Caleb Roswell", "Seth Scott", "Ryan Seno", "Tiahna Spencer", "Bailin Stokes", "Elijah Verdaguer", "Connor Wentworth",
+};
+
+int main()
+{
+    char attendance;
+    
+    for (int i=0; i<students.size(); i++) {
+    cout << "IS " << students[i] << " PRESENT?\n";
+    
+        while(true) {
+            cin >> attendance; 
+            
+            if (error()) continue;
+            if (attendance!='y'&&attendance!='n'&&attendance!='Y'&&attendance!='N') { 
+                cout << "Invalid input. Please try again.\n";
+                continue;
+            }
+            break;
+        }
+        
+        students[i]=attendance;
+    }
+    
+    for (int i=0; i<students.size(); i++) {
+        cout << students[i] << "\n";
+    }
+    
+    return 0;
+}
+
+bool error() {
+	if (cin.fail()) {
+		cin.clear();
+		cin.ignore(1000, '\n');
+		cout<<"Invalid input. Please try again.\n";
+		return true;
+	}
+	return false;
+}
