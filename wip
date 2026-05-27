@@ -1,3 +1,6 @@
+/* This program will record the attendance by asking the user if each student in the vector
+if present, with the result sorting th students into appropriate present and absent vectors. */
+
 #include <iostream>
 #include <string>
 #include <vector>
@@ -5,8 +8,7 @@
 
 using namespace std;
 
-// functions
-    // if line fails ask for new input
+// function if line fails ask for new input
 bool error();
 
 // string of students in class
@@ -15,16 +17,20 @@ vector<string> students = {
     "Christopher Richter", "Caleb Roswell", "Seth Scott", "Ryan Seno", "Tiahna Spencer", "Bailin Stokes", "Elijah Verdaguer", "Connor Wentworth",
 };
 
+// string for present students
 vector<string> present = {};
+// string for absent students
 vector<string> absent = {};
 
 int main()
 {
     char attendance;
     
+    // ask is student is present 
     for (int i=0; i<students.size(); i++) {
-    cout << "IS " << students[i] << " PRESENT?\n";
-    
+    cout << "IS " << students[i] << " PRESENT? (y/n)\n";
+        
+        // check if input is valid
         while(true) {
             cin >> attendance; 
             
@@ -36,6 +42,7 @@ int main()
             break;
         }
         
+        // sort present and absent students into vectors
         if (attendance=='y'||attendance=='Y') {
             present.push_back(move(students[i]));
         } else {
@@ -56,10 +63,10 @@ int main()
         cout << absent[i] << "\n";
     } 
     
-    
     return 0;
 }
 
+// error function definition 
 bool error() {
 	if (cin.fail()) {
 		cin.clear();
