@@ -1,6 +1,7 @@
 #include <iostream>
 #include <string>
 #include <vector>
+#include <utility>
 
 using namespace std;
 
@@ -8,10 +9,14 @@ using namespace std;
     // if line fails ask for new input
 bool error();
 
+// string of students in class
 vector<string> students = {
     "Ilyas Devaux", "Damon Diulio", "Hamir Griffith", "Anthony Landritsi", "Bode Lentz", "George Louglos", "Jordan Mckenzie", "Envy Brown",
     "Christopher Richter", "Caleb Roswell", "Seth Scott", "Ryan Seno", "Tiahna Spencer", "Bailin Stokes", "Elijah Verdaguer", "Connor Wentworth",
 };
+
+vector<string> present = {};
+vector<string> absent = {};
 
 int main()
 {
@@ -31,12 +36,26 @@ int main()
             break;
         }
         
-        students[i]=attendance;
+        if (attendance=='y'||attendance=='Y') {
+            present.push_back(move(students[i]));
+        } else {
+            absent.push_back(move(students[i]));
+        }    
     }
     
-    for (int i=0; i<students.size(); i++) {
-        cout << students[i] << "\n";
-    }
+    // report attendance
+    cout << "\nSTUDENTS PRESENT:\n\n";
+    
+    for (int i=0; i<present.size(); i++) {
+        cout << present[i] << "\n";
+    } 
+    
+    cout << "\nSTUDENTS ABSENT:\n\n";
+    
+    for (int i=0; i<absent.size(); i++) {
+        cout << absent[i] << "\n";
+    } 
+    
     
     return 0;
 }
