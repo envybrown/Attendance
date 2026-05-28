@@ -4,7 +4,6 @@ if present, with the result sorting th students into appropriate present and abs
 #include <iostream>
 #include <string>
 #include <vector>
-#include <utility>
 
 using namespace std;
 
@@ -44,9 +43,9 @@ int main()
         
         // sort present and absent students into vectors
         if (attendance=='y'||attendance=='Y') {
-            present.push_back(move(students[i]));
+            present.push_back(students[i]);
         } else {
-            absent.push_back(move(students[i]));
+            absent.push_back(students[i]);
         }    
     }
     
