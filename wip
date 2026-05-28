@@ -24,6 +24,39 @@ vector<string> absent = {};
 int main()
 {
     char attendance;
+    int month;
+    int day;
+    int year;
+    
+    // ask for date
+    cout << "MONTH?\n";
+    while(true) { 
+        cin >> month;
+        
+        if (error()) continue;
+        if (month<1||month>12) {
+        cout << "Invalid input. Please try again.\n";
+        continue;
+        }
+        break;
+    }
+
+    cout << "DAY?\n";
+    while(true) { 
+        cin >> day;
+        
+        if (error()) continue;
+        if (day<1||day>31) {
+        cout << "Invalid input. Please try again.\n";
+        continue;
+        }
+        break;
+    }
+    
+    cout << "YEAR?\n";
+        cin >> year;
+ 
+    cout << "\n";
     
     // ask is student is present 
     for (int i=0; i<students.size(); i++) {
@@ -50,6 +83,8 @@ int main()
     }
     
     // report attendance
+    cout << month << "/" << day << "/" << year;
+    
     cout << "\nSTUDENTS PRESENT:\n\n";
     
     for (int i=0; i<present.size(); i++) {
