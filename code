@@ -98,10 +98,11 @@ int main()
         cout << absent[i] << "\n";
     } 
     
-    // Write attendance to file
+    // write attendance to file
     ofstream myfile("attendance.txt");
     myfile << month << "/" << day << "/" << year << "\n\n";
-    myfile << "STUDENTS PRESENT:\n\n";
+    
+	myfile << "STUDENTS PRESENT:\n\n";
     for (int i=0; i<present.size(); i++) {
         myfile << present[i] << "\n";
     }
