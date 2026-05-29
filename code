@@ -4,6 +4,7 @@ if present, with the result sorting th students into appropriate present and abs
 #include <iostream>
 #include <string>
 #include <vector>
+#include <fstream>
 
 using namespace std;
 
@@ -96,6 +97,19 @@ int main()
     for (int i=0; i<absent.size(); i++) {
         cout << absent[i] << "\n";
     } 
+    
+    // Write attendance to file
+    ofstream myfile("attendance.txt");
+    myfile << month << "/" << day << "/" << year << "\n\n";
+    myfile << "STUDENTS PRESENT:\n\n";
+    for (int i=0; i<present.size(); i++) {
+        myfile << present[i] << "\n";
+    }
+    myfile << "\nSTUDENTS ABSENT:\n\n";
+    for (int i=0; i<absent.size(); i++) {
+        myfile << absent[i] << "\n";
+    }
+    myfile.close();
     
     return 0;
 }
