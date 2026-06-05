@@ -65,9 +65,9 @@ int main()
         
         // check if input is valid
         while(true) {
-            cin >> attendance; 
+            cin >> attendance;
+            cin.ignore(1000, '\n');  
             
-            if (error()) continue;
             if (attendance!='y'&&attendance!='n'&&attendance!='Y'&&attendance!='N') { 
                 cout << "Invalid input. Please try again.\n";
                 continue;
