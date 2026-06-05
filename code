@@ -99,7 +99,8 @@ int main()
     } 
     
     // write attendance to file
-    ofstream myfile("attendance.txt");
+    string filename = "attendance(" + to_string(month) + "/" + to_string(day) + "/" + to_string(year) + ").txt";
+	ofstream myfile(filename);
     myfile << month << "/" << day << "/" << year << "\n\n";
     
 	myfile << "STUDENTS PRESENT:\n\n";
