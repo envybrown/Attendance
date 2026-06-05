@@ -1,5 +1,5 @@
 /* This program will record the attendance by asking the user if each student in the vector
-if present, with the result sorting th students into appropriate present and absent vectors. */
+if present, with the result sorting the students into appropriate present and absent vectors. */
 
 #include <iostream>
 #include <string>
