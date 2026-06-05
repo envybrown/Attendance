@@ -13,8 +13,8 @@ bool error();
 
 // string of students in class
 vector<string> students = {
-    "Ilyas Devaux", "Damon Diulio", "Hamir Griffith", "Anthony Landritsi", "Bode Lentz", "George Louglos", "Jordan Mckenzie", "Envy Brown",
-    "Christopher Richter", "Caleb Roswell", "Seth Scott", "Ryan Seno", "Tiahna Spencer", "Bailin Stokes", "Elijah Verdaguer", "Connor Wentworth",
+    "Daryl Dixon", "Rick Grimes", "Carol Peletier", "Glenn Rhee", "Carl Grimes", "Gabriel Strokes",
+	"Eugene Porter", "Morgan Jones", "Tara Chambler", "Shane Walsh"
 };
 
 // string for present students
